@@ -38,7 +38,6 @@ function App() {
   const [rowsPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
   const [selectedRows, setSelectedRows] = useState<SelectionState>({});
-  const [selectAll, setSelectAll] = useState(false);
 
   useEffect(() => {
     fetchArtworks(currentPage);
@@ -78,7 +77,6 @@ function App() {
     }
     
     setSelectedRows(newSelections);
-    setSelectAll(false);
   };
 
   const onSelectAllChange = (e: any) => {
@@ -97,7 +95,6 @@ function App() {
     }
     
     setSelectedRows(newSelections);
-    setSelectAll(e.checked);
   };
 
   const isRowSelected = (id: number) => {
